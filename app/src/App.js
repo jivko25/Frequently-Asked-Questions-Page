@@ -1,6 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
 import Question from './components/question/Question';
+import Title from './components/title/Title'
 import { useState } from 'react';
 
 const data = [
@@ -21,12 +22,15 @@ const data = [
 function App() {
   const [selectedItemIndex, setSelectedItemIndex] = useState();
   return (
-    <div className="App">
-      {
-        data.map((item, index) => {
-          return <Question key={item.title} title={item.title} content={item.content} itemIndex={index} isSelected={index==selectedItemIndex} onSelect={(id) => setSelectedItemIndex(id)}/>
-        })
-      }
+    <div className={styles.wrapper}>
+      <Title content='Frequently asked questions' subContent='Hello! Didnt you find what you are looking for? Please contact us.'/>
+      <div className={styles.questions}>
+        {
+          data.map((item, index) => {
+            return <Question key={item.title} title={item.title} content={item.content} itemIndex={index} isSelected={index === selectedItemIndex} onSelect={(id) => setSelectedItemIndex(id)}/>
+          })
+        }
+      </div>
     </div>
   );
 }

@@ -11,7 +11,12 @@ export default function Question({title, content, itemIndex, isSelected, onSelec
                 <div className={styles.title}>
                     <h1>{title}</h1>
                 </div>
-                <button>&#9660;</button>
+                {
+                    isSelected ?
+                    <button>&#9650;</button>
+                    :
+                    <button>&#9660;</button>
+                }
             </div>
             <div className={isSelected ? styles['content-wrapper-visible'] : styles['content-wrapper-hidden']}>
                 <p>{content}</p>

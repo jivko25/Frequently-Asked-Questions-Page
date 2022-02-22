@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss';
+
 .wrapper{
     max-width: 70vw;
     width: 100%;
@@ -8,26 +10,34 @@
 }
 
 .wrapper:hover{
-    background-color: rgb(243, 243, 243);
     cursor: pointer;
 }
 
 .title-wrapper{
-    background-color: rgb(242, 242, 242);
+    background-color: colors.$title_main;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 32px;
     line-height: 16px;
+    transition: all 0.1s linear;
     button{
         border: 0;
-        color: rgb(129, 129, 129);
+        color: colors.$arrow_main;
+        background-color: colors.$title_main;
+    }
+}
+
+.title-wrapper:hover{
+    background-color: colors.$title_hover;
+    button{
+        background-color: colors.$title_hover;
     }
 }
 
 .title-wrapper-selected{
-    background-color: rgb(242, 242, 242);
+    background-color: colors.$title_main;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,7 +47,15 @@
     transition: all 0.1s linear;
     button{
         border: 0;
-        color: rgb(129, 129, 129);
+        color: colors.$arrow_main;
+        background-color: colors.$title_main;
+    }
+}
+
+.title-wrapper-selected:hover{
+    background-color: colors.$title_hover;
+    button{
+        background-color: colors.$title_hover;
     }
 }
 
@@ -45,8 +63,12 @@
     padding: 16px 32px;
 }
 
+.title-wrapper-selected.transition{
+    padding: 0 32px;
+}
+
 .content-wrapper-visible{
-    background-color: rgb(248, 248, 248);
+    background-color: colors.$content_main;
     padding: 16px 32px;
 }
 
