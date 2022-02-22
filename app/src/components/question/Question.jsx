@@ -3,7 +3,6 @@ import styles from './Question.module.scss';
 export default function Question({title, content, itemIndex, isSelected, onSelect}) {
     const onClick = () => {
         isSelected == true ? onSelect(null) : onSelect(itemIndex);
-        console.log(itemIndex);
     }
     return(
         <div className={styles.wrapper} onClick={onClick}>
